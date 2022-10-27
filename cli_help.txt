@@ -1,0 +1,27 @@
+Usage: cli.py [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  menu   Показать меню.
+  order  Заказать пиццу PIZZA_NAME с опциональной доставкой.
+
+
+
+Usage: cli.py order [OPTIONS] PIZZA_NAME
+
+  Заказать пиццу PIZZA_NAME с опциональной доставкой.
+
+Options:
+  --delivery  Доставка заказанной пиццы.
+  --help      Show this message and exit.
+
+
+
+Usage: cli.py menu [OPTIONS]
+
+  Показать меню.
+
+Options:
+  --help  Show this message and exit.
