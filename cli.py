@@ -1,5 +1,5 @@
 import click
-from pizza import Pizza, Margherita, Pepperoni, Hawaiian
+from pizza import Pizza
 import pizzeria
 
 
