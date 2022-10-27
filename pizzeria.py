@@ -5,7 +5,13 @@ from typing import Callable
 
 
 def log(template: str) -> Callable:
-    """Декорирует возвращаемое значение функции по шаблону template."""
+    """Декорирует возвращаемое значение функции по шаблону template.
+
+    template:
+        func_name: название функции
+        func_result: возвращаемое значение функции
+        time: время выполнения функции
+    """
 
     def decorator(func: Callable) -> Callable:
         @wraps(func)
