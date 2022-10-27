@@ -1,5 +1,6 @@
 import click
 from pizza import Pizza, Margherita, Pepperoni, Hawaiian
+import pizzeria
 
 
 @click.group()
@@ -8,26 +9,30 @@ def cli() -> None:
 
 
 @cli.command()
-@click.argument('pizza_name')
+@click.argument('pizza')
 @click.option(
     '--delivery', is_flag=True, default=False,
     help='Доставка заказанной пиццы.')
-def order(pizza_name: str, delivery: bool) -> None:
-    """Заказать пиццу PIZZA_NAME с опциональной доставкой."""
+def order(pizza: str, delivery: bool) -> None:
+    """Заказать пиццу PIZZA с опциональной доставкой."""
 
-    if pizza_name.title() not in Pizza.get_pizza_names():
+    if pizza.title() not in Pizza.get_pizzas():
         click.echo('К сожалению, у нас нет этого блюда. Посмотрите наше меню.')
         return
-    click.echo('🧑‍🍳 Приготовили за 2 с.')
+    cls_pizza = Pizza.get_pizzas()[pizza.title()]
+    my_pizza = cls_pizza()
+    click.echo(pizzeria.bake(my_pizza))
     if delivery:
-        click.echo('🛵 Доставили за 1 с.')
+        click.echo(pizzeria.delivery(my_pizza))
+    else:
+        click.echo(pizzeria.pickup(my_pizza))
 
 
 @cli.command()
 def menu() -> None:
     """Показать меню."""
 
-    pizzas = [Margherita(), Pepperoni(), Hawaiian()]
+    pizzas = [cls_pizza() for cls_pizza in Pizza.get_pizzas().values()]
     for pizza in pizzas:
         click.echo(pizza)
 

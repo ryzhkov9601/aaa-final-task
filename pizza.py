@@ -1,5 +1,6 @@
 from enum import Enum
 from functools import wraps
+from typing import Dict
 
 
 class Size(Enum):
@@ -81,6 +82,12 @@ class Pizza:
         """Возвращает названия всех производных пицц."""
 
         return [cls.__name__ for cls in Pizza.__subclasses__()]
+
+    @staticmethod
+    def get_pizzas() -> Dict:
+        """Возвращает словарь {'название класса пиццы': класс пиццы}."""
+
+        return {cls.__name__: cls for cls in Pizza.__subclasses__()}
 
 
 class Margherita(Pizza, EmojiMixin):

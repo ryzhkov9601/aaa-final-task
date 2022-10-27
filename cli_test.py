@@ -33,6 +33,7 @@ def order_result_with_delivery(request):
 def test_order(order_result):
     assert order_result.exit_code == 0
     assert '🧑‍🍳 Приготовили' in order_result.output
+    assert '🏠 Забрали' in order_result.output
     assert '🛵 Доставили' not in order_result.output
 
 
@@ -45,6 +46,7 @@ def test_order_with_delivery(order_result_with_delivery):
     assert order_result_with_delivery.exit_code == 0
     assert '🧑‍🍳 Приготовили' in order_result_with_delivery.output
     assert '🛵 Доставили' in order_result_with_delivery.output
+    assert '🏠 Забрали' not in order_result_with_delivery.output
 
 
 @pytest.mark.parametrize(
