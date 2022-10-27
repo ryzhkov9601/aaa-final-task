@@ -1,0 +1,10 @@
+# virtual environment
+venv/
+
+# cache
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+
+# vscode settings
+.vscode/
