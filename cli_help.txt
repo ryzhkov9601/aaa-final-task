@@ -5,13 +5,13 @@ Options:
 
 Commands:
   menu   Показать меню.
-  order  Заказать пиццу PIZZA_NAME с опциональной доставкой.
+  order  Заказать пиццу PIZZA с опциональной доставкой.
 
 
 
-Usage: cli.py order [OPTIONS] PIZZA_NAME
+Usage: cli.py order [OPTIONS] PIZZA
 
-  Заказать пиццу PIZZA_NAME с опциональной доставкой.
+  Заказать пиццу PIZZA с опциональной доставкой.
 
 Options:
   --delivery  Доставка заказанной пиццы.
