@@ -28,19 +28,25 @@ def log(template: str) -> Callable:
     return decorator
 
 
-@log("🧑‍🍳 Приготовили за {time}с!")
+@log('{func_result} за {time}с!')
 def bake(pizza: Pizza) -> str:
     """Готовит пиццу."""
 
+    return '🧑‍🍳 Приготовили'
 
-@log("🛵 Доставили за {time}c!")
+
+@log('{func_result} за {time}c!')
 def delivery(pizza: Pizza) -> str:
     """Доставляет пиццу."""
 
+    return '🛵 Доставили'
 
-@log('🏠 Забрали за {time}с!')
+
+@log('{func_result} за {time}с!')
 def pickup(pizza: Pizza) -> str:
     """Самовывоз."""
+
+    return '🏠 Забрали'
 
 
 if __name__ == '__main__':
