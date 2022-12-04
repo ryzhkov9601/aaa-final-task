@@ -16,9 +16,8 @@ def cli() -> None:
 @click.option(
     '--size', default='L', type=click.Choice(Size._member_names_),
     show_default=True, help='Размер пиццы.')
-def order(pizza: str, delivery: bool, size: Size) -> None:
+def order(pizza: str, delivery: bool, size: str) -> None:
     """Заказать пиццу PIZZA размера SIZE с опциональной доставкой."""
-
     if pizza.title() not in Pizza.get_pizzas():
         click.echo('К сожалению, у нас нет этого блюда. Посмотрите наше меню.')
         return
