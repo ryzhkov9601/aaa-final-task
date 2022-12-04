@@ -1,5 +1,5 @@
 import click
-from pizza import Pizza
+from pizza import Pizza, Size
 import pizzeria
 
 
@@ -13,14 +13,17 @@ def cli() -> None:
 @click.option(
     '--delivery', is_flag=True, default=False,
     help='Доставка заказанной пиццы.')
-def order(pizza: str, delivery: bool) -> None:
-    """Заказать пиццу PIZZA с опциональной доставкой."""
+@click.option(
+    '--size', default='L', type=click.Choice(Size._member_names_),
+    show_default=True, help='Размер пиццы.')
+def order(pizza: str, delivery: bool, size: Size) -> None:
+    """Заказать пиццу PIZZA размера SIZE с опциональной доставкой."""
 
     if pizza.title() not in Pizza.get_pizzas():
         click.echo('К сожалению, у нас нет этого блюда. Посмотрите наше меню.')
         return
     cls_pizza = Pizza.get_pizzas()[pizza.title()]
-    my_pizza = cls_pizza()
+    my_pizza = cls_pizza(size=Size(size))
     click.echo(pizzeria.bake(my_pizza))
     if delivery:
         click.echo(pizzeria.delivery(my_pizza))
