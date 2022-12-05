@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.12, pytest-7.1.3, pluggy-1.0.0 -- /home/ryzhkov/avito/aaa-final-task/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/ryzhkov/avito/aaa-final-task
+collecting ... collected 22 items
+
+cli_test.py::test_order[pepperoni] PASSED                                [  4%]
+cli_test.py::test_order[margherita] PASSED                               [  9%]
+cli_test.py::test_order[hawaiian] PASSED                                 [ 13%]
+cli_test.py::test_order_with_delivery[pepperoni] PASSED                  [ 18%]
+cli_test.py::test_order_with_delivery[margherita] PASSED                 [ 22%]
+cli_test.py::test_order_with_delivery[hawaiian] PASSED                   [ 27%]
+cli_test.py::test_wrong_order[hamburger] PASSED                          [ 31%]
+cli_test.py::test_wrong_order[ice-cream] PASSED                          [ 36%]
+cli_test.py::test_menu[menu] PASSED                                      [ 40%]
+pizza_test.py::TestPizza::test_str PASSED                                [ 45%]
+pizza_test.py::TestPizza::test_size_setter PASSED                        [ 50%]
+pizza_test.py::TestPizza::test_dict_keys PASSED                          [ 54%]
+pizza_test.py::TestPizza::test_dict PASSED                               [ 59%]
+pizza_test.py::TestPizza::test_eq PASSED                                 [ 63%]
+pizza_test.py::TestPizza::test_ne PASSED                                 [ 68%]
+pizza_test.py::TestEmojiMixin::test_str PASSED                           [ 72%]
+pizza_test.py::TestEmojiMixin::test_name PASSED                          [ 77%]
+pizzeria_test.py::test_log_func_name[{func_name}-my_func] PASSED         [ 81%]
+pizzeria_test.py::test_log_func_name[{func_result}-Hello, world!] PASSED [ 86%]
+pizzeria_test.py::test_bake PASSED                                       [ 90%]
+pizzeria_test.py::test_delivery PASSED                                   [ 95%]
+pizzeria_test.py::test_pickup PASSED                                     [100%]
+
+============================== 22 passed in 0.04s ==============================
